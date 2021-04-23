@@ -42,7 +42,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Product.count', -1) do
       delete product_url(@product)
     end
-
+    
     assert_redirected_to products_url
+  end
+
+  test 'should correct render page with ordered products' do
+    get store_index_path
+    product = Product.order(:title).first
+
+    assert_response :success
+    assert_select   'h2', text: product.title
   end
 end
