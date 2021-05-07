@@ -38,11 +38,12 @@ class ProductsTest < ApplicationSystemTestCase
     assert_text "Product was successfully updated"
     click_on "Back"
   end
-  
+
   test "destroying a Product" do
-    visit products_url
+    binding.pry
+    delete product_path(Product.last.id)
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Destroy", match: :last
     end
 
     assert_text "Product was successfully destroyed"

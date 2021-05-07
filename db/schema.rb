@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_181107) do
+ActiveRecord::Schema.define(version: 2021_05_06_141739) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_181107) do
     t.string "name"
     t.text "address"
     t.string "email"
-    t.integer "pay_type"
+    t.string "pay_type", default: "Check"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
