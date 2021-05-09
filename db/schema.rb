@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_06_141739) do
+ActiveRecord::Schema.define(version: 2021_05_08_195039) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 2021_05_06_141739) do
     t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "current_password_digest"
   end
 
   add_foreign_key "line_items", "carts"
