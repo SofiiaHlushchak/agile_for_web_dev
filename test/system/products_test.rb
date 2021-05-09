@@ -40,7 +40,6 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Product" do
-    binding.pry
     delete product_path(Product.last.id)
     page.accept_confirm do
       click_on "Destroy", match: :last
